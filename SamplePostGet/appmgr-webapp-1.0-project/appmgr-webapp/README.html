@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head><title>AppMgr-WebApp</title></head>
+
+
+  <body>
+      <h1>Sample REST Application Manager WebApp</h1>
+
+      <p>This is a RESTful application session manager web service with a Jetty Servlet container.</p>
+      
+      <h2>Contents</h2>
+      <p>The project consists of following Java classes:</p>
+      <dl>
+          <dt><code>com.parajuli.abhi.samplerest.appmgr.resources.AppMgrResource</code></dt>
+          <dd>A resource class that consumes and produces an XML or a JSON response to an HTTP POST and GET.</dd>
+		  <dt><code>com.parajuli.abhi.samplerest.appmgr.resources.ApplicationSession</code></dt>
+          <dd>Data Contract Class.</dd>
+		  <dt><code>com.parajuli.abhi.samplerest.appmgr.resources.ApplicationSessionKey</code></dt>
+          <dd>Data Contract Helper Key Class.</dd>
+      </dl>
+    <p>The mapping of the URI path space is presented in the following table:</p>
+	<table border="1">
+	<tr>
+	<th>URI path</th>
+	<th>Resource class</th>
+	<th>HTTP methods</th>
+	</tr>
+	<tr>
+	<td>/samplerest/appmgr/applicationsession</td>
+	<td>AppMgrResource</td>
+	<td>POST</td>
+	</tr>
+	<tr>
+	<td>/samplerest/appmgr/applicationsession/userID={userID}</td>
+	<td>AppMgrResource</td>
+	<td>GET</td>
+	</tr>
+	<tr>
+	<td>/samplerest/appmgr/applicationsession/userID={userID}/applicationID={applicationID}</td>
+	<td>AppMgrResource</td>
+	<td>GET</td>
+	</tr>
+	</table>
+
+      <h2>Running the Example</h2>
+
+      <p>Run the example using Jetty container as follows:</p>
+      <blockquote><code>mvn clean package org.mortbay.jetty:maven-jetty-plugin:run</code></blockquote>
+      <p>From a web browser, visit:</p>
+      <blockquote><code><a href="http://localhost:8080/appmgr-webapp/samplerest/appmgr">http://localhost:8080/appmgr-webapp/samplerest/appmgr</a></code>
+      </blockquote>
+ </body></html>
